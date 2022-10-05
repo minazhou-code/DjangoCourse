@@ -1,0 +1,22 @@
+{% extends 'MyCourses/base.html' %}
+{% block Title %}
+<title>Courses we offer</title>
+{% endblock Title %}
+{% block content %}
+<form method="post" action = "http://127.0.0.1:8000/Courses/sample_form/">
+{% csrf_token %}
+<p>
+<label for="id_text_input">Text Input</label><br>
+<input id="id_text_input" type="text" name= "q" value="" placeholder="Enter some text">
+</p>
+<p>
+<input type="hidden" name="text_input" value="Sunil Kathuria">
+<input type="hidden" name="password_input" value="my_password">
+</p>
+<p>
+<button type="submit" name="my_submit" value="Button">
+<strong>Search Course</strong>
+</button>
+</p>
+</form>
+{% endblock content %}

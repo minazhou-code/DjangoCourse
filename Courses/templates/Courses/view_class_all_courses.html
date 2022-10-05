@@ -1,0 +1,15 @@
+{% extends 'MyCourses/base.html' %}
+{% block Title %}
+<title>Delete Course</title>
+{% endblock Title %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div>
+<form method="POST">
+{% csrf_token %}
+<h2>Delete Course</h2>
+<p>Are you sure you want to delete "{{ object }}"?</p>
+<input type="submit" value="Confirm">
+</form>
+</div>
+{% endblock content %}

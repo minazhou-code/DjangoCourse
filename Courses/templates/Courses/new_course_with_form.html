@@ -1,0 +1,12 @@
+{% extends 'MyCourses/base.html' %}
+{% block Title %}
+<title>New Course Using Form</title>
+{% endblock Title %}
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<br>
+{{ form }}
+<input type="submit" value="Add New Course">
+</form>
+{% endblock content %}

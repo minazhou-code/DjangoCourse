@@ -1,0 +1,43 @@
+{% extends 'MyCourses/base.html' %}
+{% block Title %}
+<title>New Course</title>
+{% endblock Title %}
+{% block content %}
+<form method="POST" action="{% url 'courses_new_course' %}">
+{% csrf_token %}
+<div class="section-1-container section-container">
+<br>
+<div class="form-group">
+<label for="course_name">Course Name:</label>
+<input type="text" id="course_name" name="course_name"><br>
+</div>
+<div class="form-group">
+<label for="short_desc">Short Description:</label>
+<input type="text" id="short_desc" name="short_desc"><br>
+</div>
+<div class="form-group">
+<label for="desc">Description:</label>
+<textarea rows="3" cols="30" id="desc" name="desc"></textarea><br>
+</div>
+<div class="form-group">
+<label for="instructor">Instructor:</label>
+<input type="text" id="instructor" name="instructor"><br>
+</div>
+<div class="form-group">
+<label for="duration">Duration:</label>
+<input type="number" id="duration" name="duration" min="0" max="120"><br>
+</div>
+<div class="form-group">
+<label for="delivery_mode">Delivery Mode:</label>
+<select name="Delivery Mode" id="delivery_mode" size="1">
+<option value="OFF">Offline</option>
+<option value="ON">Online</option>
+<option value="REC">Recording</option>
+</select><br>
+</div>
+<label for="keywords">Keywords:</label>
+<input type="text" id="keywords" name="keywords"><br><br>
+<input type="submit" value="New Course">
+</div>
+</form>
+{% endblock content %}

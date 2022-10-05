@@ -1,0 +1,12 @@
+{% extends 'MyCourses/base.html' %}
+{% block Title %}
+<title>New Course Using Model Form</title>
+{% endblock Title %}
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<br>
+{{ form.as_p}}
+<input type="submit" value="Add New Course">
+</form>
+{% endblock content %}

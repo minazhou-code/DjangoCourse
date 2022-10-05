@@ -1,0 +1,24 @@
+{% extends 'MyCourses/base.html' %}
+
+{% block Title %}
+    <title>Course</title>
+{% endblock Title %}
+
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="container-fluid">
+            <fieldset class="form-group">
+                <legend class="Text">Add new Course</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Add Course</button>
+            </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

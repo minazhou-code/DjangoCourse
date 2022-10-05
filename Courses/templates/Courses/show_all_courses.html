@@ -1,0 +1,21 @@
+{% extends 'MyCourses/base.html' %}
+{% block Title %}
+<title>Courses we offer</title>
+{% endblock Title %}
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<br>
+{% for course in all_courses %}
+<div></div>
+<H2>{{ course.name }}</H2>
+{%if course.delivery_mode == 'ON'%}
+by {{ course.instructor }}. A {{ course.duration }} hour online course
+{%elif course.delivery_mode == 'OFF' %}
+by {{ course.instructor }}. A {{ course.duration }} hour offline course
+{% else %}
+by {{ course.instructor }}. A {{ course.duration }} hour pre-recorded course
+{% endif %}
+{% endfor%}
+</form>
+{% endblock content %}
