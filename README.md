@@ -1,1 +1,2 @@
 # DjangoCourse
+Django Project
